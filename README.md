@@ -20,7 +20,7 @@ ode_test/build$ ./rk4_main
 
 Result
 
-<img src="boost_odeint_practice/rk4_main.png" width="680" height="480" />
+<img src="ode_test/rk4_main.png" width="680" height="480" />
 
 system dynamics
 
