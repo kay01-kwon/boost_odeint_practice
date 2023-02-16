@@ -23,9 +23,6 @@ ode_test/build$ cmake ..
 ```
 ode_test/build$ ./rk4_main
 ```
-Result
-
-<img src="ode_test/rk4_main.png" width="680" height="480" />
 
 system dynamics
 
