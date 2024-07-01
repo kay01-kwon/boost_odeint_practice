@@ -13,10 +13,7 @@ ode_test::ode_test()
 void ode_test::do_rk4()
 {
     rk4.do_step(
-        std::bind(&ode_test::system_dynamics,&(*this),
-        std::placeholders::_1,
-        std::placeholders::_2,
-        std::placeholders::_3),
+        ode_test(),
         s,t,dt);
     t = t+dt;
     // cout<<"Time : "<<t<<" position :"<<s(0)<<endl;
@@ -37,7 +34,12 @@ void ode_test::get_time(double* t_ptr)
     *t_ptr = t;
 }
 
-void ode_test::system_dynamics(state_type &s, state_type &dsdt, double t)
+// void ode_test::system_dynamics(state_type &s, state_type &dsdt, double t)
+// {
+//     dsdt = A*s + u;
+// }
+
+void ode_test::operator()(const state_type &s, state_type &dsdt, const double t)
 {
     dsdt = A*s + u;
 }
@@ -46,3 +48,5 @@ ode_test::~ode_test()
 {
 
 }
+
+

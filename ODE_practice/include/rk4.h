@@ -40,6 +40,8 @@ class ode_test{
 
         void system_dynamics(state_type &s_, state_type &dsdt_, double t);
 
+        void operator()(const state_type &s, state_type& dsdt, const double t);
+
     private:
 
         double t;
